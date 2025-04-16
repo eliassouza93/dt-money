@@ -1,12 +1,23 @@
+import { useEffect } from "react";
 import { Header } from "../../components/Header";
 import { Summary } from "../../components/Summary";
 import { PriceHighlight, TransactionsContainer, TransactionsTable } from "./styles";
 
 export function Transactions() {
+
+ 
+
+  useEffect(() => {
+    fetch('http://localhost:3333/transactions/').then(response => {
+      console.log(response)
+    })
+
+  }, [])
+
   return (
     <div>
       <Header />
-      <Summary />
+      <Summary />git 
 
       <TransactionsContainer>
         <TransactionsTable>
